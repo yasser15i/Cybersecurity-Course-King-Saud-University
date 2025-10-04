@@ -49,12 +49,18 @@ npm run build
 
 1. **إعداد المشروع:**
    - تأكد من رفع الكود على GitHub
-   - ملف `vercel.json` جاهز للنشر
+   - ملف `vercel.json` جاهز للنشر مع إعدادات SPA
 
 2. **النشر:**
    - اذهب إلى [vercel.com](https://vercel.com)
    - سجل دخولك بحساب GitHub
    - اضغط "New Project" واختر المستودع
+   - **تأكد من الإعدادات التالية:**
+     ```
+     Framework Preset: Vite
+     Build Command: npm run build
+     Output Directory: dist
+     ```
    - أضف متغيرات البيئة:
      ```
      VITE_SUPABASE_URL=your_supabase_url
@@ -62,7 +68,12 @@ npm run build
      ```
    - اضغط "Deploy"
 
-3. **الموقع المنشور:**
+3. **حل مشكلة 404 (إن وجدت):**
+   - تأكد من أن `vercel.json` يحتوي على rewrites للـ SPA
+   - تحقق من Build Logs في Vercel
+   - أعد النشر (Redeploy) بعد التعديلات
+
+4. **الموقع المنشور:**
    - سيحصل الموقع على رابط Vercel فريد
    - يمكن مشاركته مع الجمهور
 
