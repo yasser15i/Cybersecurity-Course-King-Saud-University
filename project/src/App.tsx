@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { LanguageProvider } from './contexts/LanguageContext';
 import LoadingAnimation from './components/LoadingAnimation';
 import Header from './components/Header';
 import HeroSection from './components/HeroSection';
@@ -33,13 +34,15 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-white" dir="rtl">
-      <Header />
-      <HeroSection onNavigate={handleNavigate} />
-      <AboutSection />
-      <RegisterSection />
-      <CertificatesSection />
-    </div>
+    <LanguageProvider>
+      <div className="min-h-screen bg-white">
+        <Header />
+        <HeroSection onNavigate={handleNavigate} />
+        <AboutSection />
+        <RegisterSection />
+        <CertificatesSection />
+      </div>
+    </LanguageProvider>
   );
 }
 

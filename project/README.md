@@ -28,8 +28,16 @@
 - Lucide React 
 
 
-## قاعدة البيانات
-الموقع متصل بقاعدة بيانات Supabase لتخزين بيانات التسجيل. جميع البيانات محمية بـ Row Level Security (RLS).
+## ربط Google Forms
+الموقع متصل بـ Google Forms لتلقي طلبات التسجيل. تحتاج إلى تحديث entry IDs في `RegisterSection.tsx` بناءً على فورمك الخاص.
+
+### كيفية الحصول على Entry IDs:
+1. افتح Google Form في وضع التحرير
+2. اضغط F12 لفتح Developer Tools
+3. اذهب إلى Network tab
+4. أرسل نموذج تجريبي
+5. ابحث عن request إلى `/formResponse`
+6. انسخ entry IDs من FormData
 
 ## التطوير والنشر
 
@@ -61,11 +69,7 @@ npm run build
      Build Command: npm run build
      Output Directory: dist
      ```
-   - أضف متغيرات البيئة:
-     ```
-     VITE_SUPABASE_URL=your_supabase_url
-     VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
-     ```
+   - لا تحتاج متغيرات بيئة للـ Google Forms
    - اضغط "Deploy"
 
 3. **حل مشكلة 404 (إن وجدت):**

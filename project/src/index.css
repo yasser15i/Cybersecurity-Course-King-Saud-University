@@ -4,6 +4,20 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Language direction support */
+html[dir="ltr"] {
+  direction: ltr;
+}
+
+html[dir="rtl"] {
+  direction: rtl;
+}
+
+/* Smooth transitions for language changes */
+* {
+  transition: all 0.3s ease;
+}
+
 * {
   font-family: 'IBM Plex Sans Arabic', sans-serif;
 }

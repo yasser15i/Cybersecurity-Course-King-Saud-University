@@ -1,10 +1,12 @@
 import { Shield, Sparkles, Award } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 interface HeroSectionProps {
   onNavigate: (section: string) => void;
 }
 
 export default function HeroSection({ onNavigate }: HeroSectionProps) {
+  const { t } = useLanguage();
   return (
     <section className="relative min-h-screen pt-12 sm:pt-14 md:pt-16 lg:pt-18 pb-12 sm:pb-16 md:pb-20 lg:pb-24 overflow-hidden flex items-center">
       {/* King Saud University Background Image */}
@@ -36,23 +38,23 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
           {/* Clean Welcome Badge */}
           <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-md px-4 py-2 rounded-full mb-8 border border-white/30 animate-fadeIn">
             <Sparkles className="w-4 h-4 text-cyan-200" />
-            <span className="text-sm font-medium">الإدارة العامة للأمن السيبراني</span>
+            <span className="text-sm font-medium">{t('hero.badge')}</span>
           </div>
 
           {/* Clean Main Heading */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight animate-slideUp">
             <span className="block mb-3 text-white">
-              مبادرة الأمن السيبراني
+              {t('hero.title')}
             </span>
             <span className="block text-xl sm:text-2xl md:text-3xl text-cyan-200 font-light animate-fadeIn delay-1000">
-              لتمكين الكوادر الوطنية
+              {t('hero.subtitle')}
             </span>
           </h1>
 
           {/* Clean Description */}
           <div className="max-w-4xl mx-auto mb-12 animate-fadeIn delay-1500">
             <p className="text-lg md:text-xl text-cyan-50 leading-relaxed px-4">
-              نسعى لدعم الابتكار ورفع كفاءة الكوادر الوطنية في مجال الأمن السيبراني من خلال برامج تدريبية متقدمة وورش عمل تفاعلية
+              {t('hero.description')}
             </p>
           </div>
 
@@ -65,7 +67,7 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
               className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-2xl font-bold text-lg hover:from-cyan-600 hover:to-blue-600 transition-all duration-300 shadow-xl hover:scale-105 min-w-[250px]"
             >
               <span className="flex items-center justify-center gap-2">
-                التسجيل في المبادرة
+                {t('hero.registerButton')}
                 <Sparkles className="w-5 h-5" />
               </span>
             </button>
@@ -75,7 +77,7 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
               className="w-full sm:w-auto px-6 py-3 bg-white/20 backdrop-blur-md text-white border border-white/40 rounded-2xl font-bold hover:bg-white/30 transition-all duration-300 min-w-[200px]"
             >
               <span className="flex items-center justify-center gap-2">
-                التعريف بالمبادرة
+                {t('hero.aboutButton')}
                 <Shield className="w-4 h-4" />
               </span>
             </button>
@@ -85,7 +87,7 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
               className="w-full sm:w-auto px-6 py-3 bg-white/20 backdrop-blur-md text-white border border-white/40 rounded-2xl font-bold hover:bg-white/30 transition-all duration-300 min-w-[200px]"
             >
               <span className="flex items-center justify-center gap-2">
-                الشهادات والدعم
+                {t('hero.certificatesButton')}
                 <Award className="w-4 h-4" />
               </span>
             </button>
@@ -94,9 +96,9 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
           {/* Simple Trust Indicators */}
           <div className="mt-16 animate-fadeIn delay-3000">
             <div className="flex flex-wrap justify-center items-center gap-6 text-cyan-200/80">
-              <span className="text-sm">جامعة الملك سعود</span>
-              <span className="text-sm">شهادات معتمدة</span>
-              <span className="text-sm">خبراء متخصصون</span>
+              <span className="text-sm">{t('hero.trust.university')}</span>
+              <span className="text-sm">{t('hero.trust.certificates')}</span>
+              <span className="text-sm">{t('hero.trust.experts')}</span>
             </div>
           </div>
         </div>
