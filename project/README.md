@@ -24,20 +24,12 @@
 - TypeScript
 - Vite
 - Tailwind CSS
-- Supabase
+- Microsoft Forms
 - Lucide React 
 
 
-## ربط Google Forms
-الموقع متصل بـ Google Forms لتلقي طلبات التسجيل. تحتاج إلى تحديث entry IDs في `RegisterSection.tsx` بناءً على فورمك الخاص.
-
-### كيفية الحصول على Entry IDs:
-1. افتح Google Form في وضع التحرير
-2. اضغط F12 لفتح Developer Tools
-3. اذهب إلى Network tab
-4. أرسل نموذج تجريبي
-5. ابحث عن request إلى `/formResponse`
-6. انسخ entry IDs من FormData
+## نظام التسجيل
+الموقع متصل بـ Microsoft Forms لتلقي طلبات التسجيل. عند الضغط على زر التسجيل، يتم فتح النموذج الرسمي في نافذة جديدة.
 
 ## التطوير والنشر
 
@@ -69,7 +61,7 @@ npm run build
      Build Command: npm run build
      Output Directory: dist
      ```
-   - لا تحتاج متغيرات بيئة للـ Google Forms
+   - لا تحتاج متغيرات بيئة للموقع الحالي
    - اضغط "Deploy"
 
 3. **حل مشكلة 404 (إن وجدت):**
